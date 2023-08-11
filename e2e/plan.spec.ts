@@ -5,7 +5,9 @@ describe("plan", ()=>{
 
     describe("create", ()=>{
         it("should be pass", ()=>{
-            expect(plans.getPlans).;
+            expect(plans.createPlans({title:"test", description:" not important", deadline:new Date},
+            {username:"number1", password:"number2", role:"Representative"})
+        ).toBe(false)
         })
     })
 })

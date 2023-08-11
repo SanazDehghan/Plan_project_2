@@ -1,4 +1,4 @@
-import { User } from "../user/model/user";
+import { user } from "../user/user.repository";
 import { Plan } from "./model/plan";
 import { PlanRepository, createplan, createprogram } from "./plan.repository";
 
@@ -13,10 +13,11 @@ export class planservice{
         return this.planRepo.getPlans()
     }
 
-    public createPlans(plan:createplan, user:User){
+    public createPlans(plan:createplan, user:user){
         // if conditions for user 
         if (user.role !== "Admin"){
-            throw console.error("this user by this role can not create plan");
+            //throw Error("this user by this role can not create plan");
+            return false
         }
 
         const createplan = this.planRepo.createplan(plan)
