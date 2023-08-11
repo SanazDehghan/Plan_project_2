@@ -6,6 +6,7 @@ export interface createplan {
     title:String;
     description?:String;
     deadline:Date;
+    program:Program[]
 }
 
 export interface createprogram{
@@ -34,9 +35,9 @@ export class PlanRepository{
     }
 
     //add program 
-/*     public addProgram(plan:Plan, program:createprogram){
+    public addProgram(plan:Plan, program:createprogram){
         const newprogram = plan.program.push({...program, planId:plan.id})
         return newprogram
-    } */
+    }
 
 }

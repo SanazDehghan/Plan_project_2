@@ -7,5 +7,6 @@ export interface Plan {
     title:String;
     description?:String;
     deadline:Date;
+    program:Program[]
 }
 
