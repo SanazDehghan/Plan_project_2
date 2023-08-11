@@ -9,13 +9,6 @@ export interface createplan {
     program:Program[]
 }
 
-export interface createprogram{
-    id:number;
-    title:string;
-    description:string;
-    userId:string;
-    planId:number;
-}
 export class PlanRepository{
     private plans :Plan[] = []
     //
@@ -34,10 +27,6 @@ export class PlanRepository{
         return findplan
     }
 
-    //add program 
-    public addProgram(plan:Plan, program:createprogram){
-        const newprogram = plan.program.push({...program, planId:plan.id})
-        return newprogram
-    }
+
 
 }

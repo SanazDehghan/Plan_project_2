@@ -1,6 +1,6 @@
 import { user } from "../user/user.repository";
 import { Plan } from "./model/plan";
-import { PlanRepository, createplan, createprogram } from "./plan.repository";
+import { PlanRepository, createplan } from "./plan.repository";
 
 export class planservice{
 
@@ -23,22 +23,4 @@ export class planservice{
         const createplan = this.planRepo.createplan(plan)
         return createplan
     }
-
-/*     public addProgram(plan:Plan, program:createprogram, user:User){
-        const today = new Date()
-
-        //conditions
-        if (user.role !== "Representative"){
-            throw console.error("this user by this role can not create program");
-        }
-
-        if (plan.deadline< today){
-            throw Error("time is over!!!")
-        }
-
-        const addprogram = this.planRepo.addProgram(plan, program)
-        return addprogram
-    } */
-
-
 }
